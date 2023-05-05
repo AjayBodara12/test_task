@@ -16,7 +16,7 @@ const HomePage = () => {
           `https://api.github.com/repos/AjayBodara12/testRepo/contents/`,
           {
             headers: {
-              Authorization: `token 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`,
+              Authorization: `token ${process.env.TOKEN}`,
             },
           }
         );
@@ -26,7 +26,7 @@ const HomePage = () => {
         const fileRequests = response.data.map((file) =>
           axios.get(file.url, {
             headers: {
-              Authorization: `token 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`,
+              Authorization: `token ${process.env.TOKEN}`,
             },
           })
         );
@@ -55,7 +55,7 @@ const HomePage = () => {
         `https://api.github.com/repos/AjayBodara12/testRepo/contents/${fileName}`,
         {
           headers: {
-            Authorization: `token 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`,
+            Authorization: `token ${process.env.TOKEN}`,
           },
           data: {
             message: "Deleted file",
@@ -80,7 +80,7 @@ const HomePage = () => {
         `https://api.github.com/repos/AjayBodara12/testRepo/contents/${selectedFile.name}`,
         {
           headers: {
-            Authorization: `token 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`,
+            Authorization: `token ${process.env.TOKEN}`,
           },
         }
         );
@@ -96,7 +96,7 @@ const HomePage = () => {
         },
         {
           headers: {
-            Authorization: `token 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`,
+            Authorization: `token ${process.env.TOKEN}`,
           },
         }
       );
